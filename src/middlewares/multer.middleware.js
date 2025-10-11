@@ -9,6 +9,12 @@ const storage = multer.diskStorage({
   },
 });
 
-const upload = multer({ storage: storage });
+const upload = multer({
+  storage: storage,
+  fileFilter: function (req, file, cb) {
+    console.log("Multer processing file:", file.originalname);
+    cb(null, true);
+  }
+});
 
 export { upload };
