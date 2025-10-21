@@ -387,6 +387,7 @@ const user = await User.aggregate([
           $addFields:{
             owner:{
               $first: "$owner"
+              
             }
           }
         }
@@ -408,11 +409,11 @@ export {
   loginUser, 
   logoutUser, 
   refreshAccessToken, 
-  ChangeOldPassword, 
-  getCurrentUser, 
-  updateAccountDetails, 
-  updateAvatar, 
-  updateCoverImage, 
+  ChangeOldPassword,
+  getCurrentUser,
+  updateAccountDetails,
+  updateAvatar,
+  updateCoverImage,
   getUserChannelProfile,
   getWatchHistory
 };
